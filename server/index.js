@@ -1,28 +1,59 @@
-// console.log("Implement servermu disini yak 😝!");
 const http = require("http");
+const { PORT = 8000 } = process.env;
+const url = require("url");
 const fs = require("fs");
-
-function loadHTML(file, statusCode, res) {
-  res.writeHead(200, { "content-type": "text/html" });
-  let html = fs.readFileSync(file);
-  res.end(html);
-}
+const path = require("path");
+const PUBLIC_DIRECTORY = path.join(__dirname, "../public");
 
 function onRequest(req, res) {
-  console.log(req.url);
+  res.setHeader("Content-Type", "text/html");
   switch (req.url) {
-    case "/":
-      loadHTML("./public/index.html", 200, res);
+    case "/" || "":
+      req.url = "/index.html";
       break;
     case "/cars":
-      loadHTML("./public/cari_mobil.html", 200, res);
+      req.url = "/cari_mobil.html";
       break;
     default:
-      loadHTML("./public/404.html", 404, res);
+      req.url = req.url;
       break;
   }
+  const parseURL = url.parse(req.url);
+  const pathName = `${parseURL.pathname}`;
+  const extension = path.parse(pathName).ext;
+  const absolutePath = path.join(PUBLIC_DIRECTORY, pathName);
+  console.log(pathName, extension);
+  console.log(`absolute`, absolutePath);
+  const mapContent = {
+    ".css": "text/css",
+    ".jpg": "image/jpeg",
+    ".html": "text/html",
+    ".js": "text/javascript",
+    ".svg": "image/svg+xml",
+  };
+
+  fs.exists(absolutePath, (exist) => {
+    if (!exist) {
+      res.writeHead(404);
+      res.end("FILE NOT FOUND");
+      return;
+    }
+  });
+
+  fs.readFile(absolutePath, (err, data) => {
+    if (err) {
+      res.statusCode = 500;
+      res.end("FILE NOT FOUND");
+      console.log(err);
+    } else {
+      res.setHeader("Content-Type", mapContent[extension] || "text/plain");
+      res.end(data);
+    }
+  });
 }
 
 const server = http.createServer(onRequest);
 
-server.listen(8000);
+server.listen(PORT, "0.0.0.0", () => {
+  console.log("Server sudah berjalan, silahkan buka http://0.0.0.0:%d", PORT);
+});

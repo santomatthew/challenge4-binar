@@ -101,9 +101,38 @@ function createFilterBox() {
 }
 
 async function onSearch(props) {
-  console.log(props);
+  let listcar = document.getElementById("list-car");
+  listcar.innerHTML = "";
   let cars = await Binar.listCars();
-  console.log(cars);
+  let arrCars = [];
+
+  for (let i = 0; i < cars.length; i++) {
+    if (
+      cars[i].capacity >= props.passenger &&
+      cars[i].withDriver == true &&
+      cars[i].availableAt <= props.datetime
+    ) {
+      arrCars.push();
+    }
+  }
+  listcar.innerHTML += arrCars.join("");
+}
+
+function rupiah(price) {
+  let convertPrice = price.toString();
+  let convertString = convertPrice.split("");
+  let array = [];
+  let temp = 3;
+
+  for (let i = convertString.length - 1; i >= 0; i--) {
+    temp -= 1;
+    array.unshift(convertString[i]);
+    if (temp == 0 && i != 0) {
+      array.unshift(".");
+      temp = 3;
+    }
+  }
+  return array.join("");
 }
 
 createFilterBox();
