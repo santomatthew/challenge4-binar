@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Binar Car Rental</title>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <link rel="stylesheet"
+    href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+
+  <style>
+    body {
+      font-family: Helvetica;
+      overflow-x: hidden;
+    }
+
+    #owl-container {
+      margin-top: 100px;
+      width: 150%;
+      left: -25%;
+      position: relative;
+    }
+
+    .owl-carousel .owl-nav button.owl-next,
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel button.owl-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      border: 1px solid #c4c4c4;
+      /* background-color: white; */
+
+    }
+
+    .owl-theme .owl-nav [class*=owl-]:hover {
+      background-color: #5CB85F;
+    }
+
+
+    .item {
+      background-color: #F1F3FF;
+
+    }
+
+
+
+    .owl-nav>.owl-prev>span:hover,
+    .owl-nav>.owl-next>span:hover {
+      background-color: #5CB85F;
+    }
+
+
+    .table-custom {
+      border-collapse: separate;
+      border-spacing: 15px;
+    }
+
+    .spacing {
+      margin-top: 80px;
+    }
+
+    .sewamobil {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 50px;
+      color: white;
+    }
+
+    .accordion-spacing {
+      margin-top: 20px;
+    }
+
+    .navbarstyling {
+      background-color: #F1F3FF;
+      box-shadow: 1px 1px 3px;
+    }
+
+    .whyus-card {
+      box-shadow: 1px 1px 7px;
+      margin: 10px;
+    }
+
+    .whyus-card:hover {
+      background-color: #F1F3FF;
+      transform: translateY(-15px);
+      transition: transform .75s;
+    }
+
+
+    .footer {
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      box-shadow: 1px -1px 3px;
+      padding: 10px;
+    }
+
+
+
+    @media screen and (min-width:992px) {
+
+      .item {
+        height: 100%;
+      }
+
+      .textjudul {
+        margin-top: 100px;
+      }
+
+      .bground {
+        padding-bottom: 190px;
+      }
+
+      .car {
+        position: absolute;
+        width: 704px;
+        margin-left: 100px;
+        margin-bottom: 300px;
+        overflow-y: hidden;
+      }
+
+
+    }
+
+    @media screen and (max-width:991px) {
+
+      .star {
+        text-align: center;
+      }
+
+      .item {
+        height: 100%;
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+
+      .textjudul {
+        font-size: 36px;
+      }
+
+      .navbar {
+        z-index: 1000;
+      }
+
+      .navbar-collapse {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+      }
+
+      .navbar-nav {
+        background-color: white;
+        height: 100vh;
+        width: 50%;
+        left: 100%;
+        position: absolute;
+        transition: left .35s ease;
+      }
+
+      .navbar-collapse.collapsing {
+        transition: background-color .35s ease;
+      }
+
+      .navbar-collapse.show .navbar-nav {
+        transition: left .35s ease;
+        left: 50%;
+      }
+
+      .nav-item {
+        margin-left: 10px;
+      }
+
+      .car {
+        position: absolute;
+        width: 500px;
+        overflow-y: hidden;
+
+      }
+
+      #section1 {
+        margin-bottom: 375px;
+      }
+
+      .footer {
+        text-align: left;
+      }
+
+      .iconlogo {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+
+  <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+</head>
+
+
+<body style="overflow-x: hidden;">
+
+  <!-- Navbar -->
+  <div class="bground" style="background-color: #F1F3FF;overflow: hidden;">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light navbarstyling">
+        <div class="container-lg">
+          <a class="navbar-link" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
+            data-bs-content="Top popover" href="#"><svg width="100" height="34" viewBox="0 0 100 34" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="34" fill="#0D28A6" />
+            </svg>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarText" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-lg-0">
+              <li class="d-lg-none">
+                <a class="navbar-nav-toggler" href="#">X</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="#section1">Our Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="#section2">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="#section3">Testimonial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-2" href="#section4">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbar-link btn btn-success link-light" href="#">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- Mobil -->
+    <div class="container">
+      <div id="section1" class="row">
+        <div class="col-lg-6" style="margin-top: 10px;">
+          <h1 class="textjudul"><b>Sewa & Rental Mobil terbaik di kawasan (Lokasimu)</b></h1>
+          <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan
+            harga terjangkau. Selalu
+            siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+          <a href="./cari_mobil.html" type="button" class="btn btn-success">Mulai Sewa Mobil</a>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center">
+          <img src="./images/pict/mobil.svg" class="img-fluid car" style="margin-top:80px;" alt="mobil">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Orang -->
+  <div id="section2" class="container">
+    <div class="spacing row">
+
+      <div class="col-lg-6 d-flex justify-content-center">
+        <img src="./images/pict/orang.svg" class="img-fluid person" alt="orang">
+      </div>
+
+      <div class="col-lg-6" style="margin-top: 35px;">
+        <h2>Best Car Rental for any kind of trip in (Lokasimu)!</h2>
+        <p>Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi
+          mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <table class="table-custom">
+              <tr>
+                <td>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#CFD4ED" />
+                    <path d="M17.3333 8L9.99996 15.3333L6.66663 12" stroke="#0D28A6" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </td>
+                <td>
+                  Sewa Mobil Dengan Supir di Bali 12 Jam
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#CFD4ED" />
+                    <path d="M17.3333 8L9.99996 15.3333L6.66663 12" stroke="#0D28A6" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </td>
+                <td>
+                  Sewa Mobil Lepas Kunci di Bali 24 Jam
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#CFD4ED" />
+                    <path d="M17.3333 8L9.99996 15.3333L6.66663 12" stroke="#0D28A6" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </td>
+                <td>
+                  Sewa Mobil Jangka Panjang Bulanan
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#CFD4ED" />
+                    <path d="M17.3333 8L9.99996 15.3333L6.66663 12" stroke="#0D28A6" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </td>
+                <td>
+                  Gratis Antar - Jemput Mobil di Bandara
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#CFD4ED" />
+                    <path d="M17.3333 8L9.99996 15.3333L6.66663 12" stroke="#0D28A6" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </td>
+                <td>
+                  Layanan Airport Transfer / Drop In Out
+                </td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Why Us -->
+  <div class="container">
+    <div id="section3" class="spacing row">
+      <div class="col-lg-12">
+        <h3>Why Us?</h3>
+        <p>Mengapa harus pilih Binar Car Rental?</p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-3 d-flex justify-content-center">
+        <div class="card whyus-card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <svg class="iconspacing" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#F9CC00" />
+                <path
+                  d="M11.8333 24.3333H9.33329C8.89127 24.3333 8.46734 24.1577 8.15478 23.8452C7.84222 23.5326 7.66663 23.1087 7.66663 22.6667V16.8333C7.66663 16.3913 7.84222 15.9674 8.15478 15.6548C8.46734 15.3423 8.89127 15.1667 9.33329 15.1667H11.8333M17.6666 13.5V10.1667C17.6666 9.50362 17.4032 8.86773 16.9344 8.39889C16.4656 7.93005 15.8297 7.66666 15.1666 7.66666L11.8333 15.1667V24.3333H21.2333C21.6352 24.3379 22.0253 24.197 22.3315 23.9367C22.6378 23.6763 22.8397 23.3141 22.9 22.9167L24.05 15.4167C24.0862 15.1778 24.0701 14.9339 24.0027 14.7019C23.9354 14.4698 23.8184 14.2552 23.6598 14.0729C23.5013 13.8906 23.305 13.7449 23.0846 13.646C22.8642 13.5471 22.6249 13.4973 22.3833 13.5H17.6666Z"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></h5>
+            <p class="card-text"><b>Mobil Lengkap</b></p>
+            <p class="card-text">Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan terawat</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 d-flex justify-content-center">
+        <div class="card whyus-card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <svg class="iconspacing" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+                <path
+                  d="M16 24.3333C20.6023 24.3333 24.3333 20.6024 24.3333 16C24.3333 11.3976 20.6023 7.66666 16 7.66666C11.3976 7.66666 7.66663 11.3976 7.66663 16C7.66663 20.6024 11.3976 24.3333 16 24.3333Z"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 11V16L19.3333 17.6667" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> </h5>
+            <p class="card-text"><b>Harga Murah</b></p>
+            <p class="card-text">Harga murah dan bersaing, bisa bandingkan harga kami dengan rental mobil lain</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 d-flex justify-content-center">
+        <div class="card whyus-card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <svg class="iconspacing" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#FA2C5A" />
+                <path
+                  d="M23.1583 17.175L17.1833 23.15C17.0285 23.305 16.8447 23.4279 16.6424 23.5118C16.44 23.5956 16.2232 23.6388 16.0041 23.6388C15.7851 23.6388 15.5682 23.5956 15.3659 23.5118C15.1636 23.4279 14.9797 23.305 14.825 23.15L7.66663 16V7.66666H16L23.1583 14.825C23.4687 15.1373 23.6429 15.5597 23.6429 16C23.6429 16.4403 23.4687 16.8627 23.1583 17.175V17.175Z"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.8334 11.8333H11.8417" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> </h5>
+            <p class="card-text"><b>Layanan 24 Jam</b></p>
+            <p class="card-text">Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga tersedia di akhir minggu
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 d-flex justify-content-center ">
+        <div class="card whyus-card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <svg class="iconspacing" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#5CB85F" />
+                <path
+                  d="M16.0001 18.5C19.2217 18.5 21.8334 15.8883 21.8334 12.6667C21.8334 9.44502 19.2217 6.83334 16.0001 6.83334C12.7784 6.83334 10.1667 9.44502 10.1667 12.6667C10.1667 15.8883 12.7784 18.5 16.0001 18.5Z"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.8416 17.575L11.8333 25.1667L15.9999 22.6667L20.1666 25.1667L19.1583 17.5667" stroke="white"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></h5>
+            <p class="card-text"><b>Sopir Profesional</b></p>
+            <p class="card-text">Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial -->
+  <div class="container">
+    <div class="spacing row">
+      <div class="col-lg-12  d-flex justify-content-center">
+        <h3>Testimonial</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12  d-flex justify-content-center">
+        <p>Berbagai review positif dari para pelanggan kami</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="owl-container" style="margin-top: -5px;">
+    <div class="owl-carousel owl-theme">
+      <!-- Testi 1 -->
+      <div class="item">
+        <div class="card" style="padding: 30px;background-color: #F1F3FF;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 d-flex justify-content-center">
+                <img src="./images/pict/person1.svg" class="img-fluid" alt="person1"
+                  style="width: 150px;height: 150px;">
+              </div>
+              <div class="col-lg-8">
+                <div class="star row">
+                  <div class="col-lg-12 ">
+                    <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M24 0L25.7961 5.52786H31.6085L26.9062 8.94427L28.7023 14.4721L24 11.0557L19.2977 14.4721L21.0938 8.94427L16.3915 5.52786H22.2039L24 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M40 0L41.7961 5.52786H47.6085L42.9062 8.94427L44.7023 14.4721L40 11.0557L35.2977 14.4721L37.0938 8.94427L32.3915 5.52786H38.2039L40 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M56 0L57.7961 5.52786H63.6085L58.9062 8.94427L60.7023 14.4721L56 11.0557L51.2977 14.4721L53.0938 8.94427L48.3915 5.52786H54.2039L56 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M72 0L73.7961 5.52786H79.6085L74.9062 8.94427L76.7023 14.4721L72 11.0557L67.2977 14.4721L69.0938 8.94427L64.3915 5.52786H70.2039L72 0Z"
+                        fill="#F9CC00" />
+                    </svg>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    Lorem1 ipsum dolor sit amet consectetur adipisicing elit. Unde at, odit illum
+                    obcaecati
+                    repudiandae fugit quisquam maxime sit perspiciatis a, quia temporibus, ipsam illo ipsum et
+                    voluptatum! Similique, quasi deserunt.
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <b style="margin-bottom: 100px;">John Dee 32, Bromo</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testi 2 -->
+      <div class=" item">
+        <div class="card" style="padding: 30px;background-color: #F1F3FF;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 d-flex justify-content-center">
+                <img src="./images/pict/person2.svg" class="img-fluid" alt="person1"
+                  style="width: 150px;height: 150px;">
+              </div>
+              <div class="col-lg-8">
+                <div class="star row">
+                  <div class="col-lg-12 ">
+                    <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M24 0L25.7961 5.52786H31.6085L26.9062 8.94427L28.7023 14.4721L24 11.0557L19.2977 14.4721L21.0938 8.94427L16.3915 5.52786H22.2039L24 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M40 0L41.7961 5.52786H47.6085L42.9062 8.94427L44.7023 14.4721L40 11.0557L35.2977 14.4721L37.0938 8.94427L32.3915 5.52786H38.2039L40 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M56 0L57.7961 5.52786H63.6085L58.9062 8.94427L60.7023 14.4721L56 11.0557L51.2977 14.4721L53.0938 8.94427L48.3915 5.52786H54.2039L56 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M72 0L73.7961 5.52786H79.6085L74.9062 8.94427L76.7023 14.4721L72 11.0557L67.2977 14.4721L69.0938 8.94427L64.3915 5.52786H70.2039L72 0Z"
+                        fill="#F9CC00" />
+                    </svg>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde at, odit illum obcaecati
+                    repudiandae fugit quisquam maxime sit perspiciatis a, quia temporibus, ipsam illo ipsum et
+                    voluptatum! Similique, quasi deserunt.
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <b>John Dee 32, Bromo</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card" style="padding: 30px;background-color: #F1F3FF;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 d-flex justify-content-center">
+                <img src="./images/pict/person1.svg" class="img-fluid" alt="person1"
+                  style="width: 150px;height: 150px;">
+              </div>
+              <div class="col-lg-8">
+                <div class="star row">
+                  <div class="col-lg-12 ">
+                    <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M24 0L25.7961 5.52786H31.6085L26.9062 8.94427L28.7023 14.4721L24 11.0557L19.2977 14.4721L21.0938 8.94427L16.3915 5.52786H22.2039L24 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M40 0L41.7961 5.52786H47.6085L42.9062 8.94427L44.7023 14.4721L40 11.0557L35.2977 14.4721L37.0938 8.94427L32.3915 5.52786H38.2039L40 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M56 0L57.7961 5.52786H63.6085L58.9062 8.94427L60.7023 14.4721L56 11.0557L51.2977 14.4721L53.0938 8.94427L48.3915 5.52786H54.2039L56 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M72 0L73.7961 5.52786H79.6085L74.9062 8.94427L76.7023 14.4721L72 11.0557L67.2977 14.4721L69.0938 8.94427L64.3915 5.52786H70.2039L72 0Z"
+                        fill="#F9CC00" />
+                    </svg>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde at, odit illum obcaecati
+                    repudiandae fugit quisquam maxime sit perspiciatis a, quia temporibus, ipsam illo ipsum et
+                    voluptatum! Similique, quasi deserunt.
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <b>John Dee 32, Bromo</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testi 2 -->
+      <div class="item">
+        <div class="card" style="padding: 30px;background-color: #F1F3FF;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 d-flex justify-content-center">
+                <img src="./images/pict/person2.svg" class="img-fluid" alt="person1"
+                  style="width: 150px;height: 150px;">
+              </div>
+              <div class="col-lg-8">
+                <div class="star row">
+                  <div class="col-lg-12 ">
+                    <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M24 0L25.7961 5.52786H31.6085L26.9062 8.94427L28.7023 14.4721L24 11.0557L19.2977 14.4721L21.0938 8.94427L16.3915 5.52786H22.2039L24 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M40 0L41.7961 5.52786H47.6085L42.9062 8.94427L44.7023 14.4721L40 11.0557L35.2977 14.4721L37.0938 8.94427L32.3915 5.52786H38.2039L40 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M56 0L57.7961 5.52786H63.6085L58.9062 8.94427L60.7023 14.4721L56 11.0557L51.2977 14.4721L53.0938 8.94427L48.3915 5.52786H54.2039L56 0Z"
+                        fill="#F9CC00" />
+                      <path
+                        d="M72 0L73.7961 5.52786H79.6085L74.9062 8.94427L76.7023 14.4721L72 11.0557L67.2977 14.4721L69.0938 8.94427L64.3915 5.52786H70.2039L72 0Z"
+                        fill="#F9CC00" />
+                    </svg>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde at, odit illum obcaecati
+                    repudiandae fugit quisquam maxime sit perspiciatis a, quia temporibus, ipsam illo ipsum et
+                    voluptatum! Similique, quasi deserunt.
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <b>John Dee 32, Bromo</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sewa Mobil -->
+  <div class="container">
+    <div class="row d-lg-flex justify-content-center sewamobil" style="margin-top: 50px;background-color: #0D28A6;">
+      <div class="col-lg-5" style="text-align: center;">
+        <h2>Sewa Mobil di (Lokasimu) Sekarang</h2>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. </p>
+        <br>
+        <button type="button" class="btn btn-success">Mulai Sewa Mobil</button>
+      </div>
+    </div>
+  </div>
+  <!-- FAQ -->
+
+  <div id="section4" class="container">
+    <div class="spacing row">
+      <div class="col-lg-6">
+        <h3>Frequently Asked Question</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      </div>
+
+      <div class="col-lg-6">
+
+        <div class="row" style="position: static;">
+          <div class="col-lg-12">
+            <div class="accordion-item accordion-spacing">
+              <h2 class="accordion-header" id="flush-heading1">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                  Apa saja syarat yang dibutuhkan?
+                </button>
+              </h2>
+              <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, recusandae
+                  iste accusamus nobis quos esse, est modi cupiditate aperiam illum voluptatibus amet quae quis
+                  sapiente. Reiciendis inventore esse facere sint.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="accordion-item accordion-spacing">
+              <h2 class="accordion-header" id="flush-heading2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                  Berapa hari minimal sewa mobil lepas kunci?
+                </button>
+              </h2>
+              <div id="flush-collapse2" class="accordion-collapse collapse" aria-labelledby="flush-heading2"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, recusandae
+                  iste accusamus nobis quos esse, est modi cupiditate aperiam illum voluptatibus amet quae quis
+                  sapiente. Reiciendis inventore esse facere sint.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="accordion-item accordion-spacing">
+              <h2 class="accordion-header" id="flush-heading4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                  Berapa hari sebelumnya sebaiknya booking sewa mobil?
+                </button>
+              </h2>
+              <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, recusandae
+                  iste accusamus nobis quos esse, est modi cupiditate aperiam illum voluptatibus amet quae quis
+                  sapiente. Reiciendis inventore esse facere sint.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="accordion-item accordion-spacing">
+              <h2 class="accordion-header" id="flush-heading4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse5">
+                  Apakah Ada biaya antar-jemput?
+                </button>
+              </h2>
+              <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, recusandae
+                  iste accusamus nobis quos esse, est modi cupiditate aperiam illum voluptatibus amet quae quis
+                  sapiente. Reiciendis inventore esse facere sint.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="accordion-item accordion-spacing">
+              <h2 class="accordion-header" id="flush-heading5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                  Bagaimana jika terjadi kecelakaan
+                </button>
+              </h2>
+              <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, recusandae
+                  iste accusamus nobis quos esse, est modi cupiditate aperiam illum voluptatibus amet quae quis
+                  sapiente. Reiciendis inventore esse facere sint.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="footer row" style="margin-top: 200px;margin-bottom: 20px;">
+      <div class="col-lg-3">
+        <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+        <p>binarcarrental@gmail.com</p>
+        <p>081-233-334-808</p>
+      </div>
+
+      <div class="col-lg-2">
+        <p>Our Services</p>
+        <p>Why Us</p>
+        <p>Testimonial</p>
+        <p>FAQ</p>
+      </div>
+
+      <div class="col-lg-4">
+        <p>Connect with us</p>
+        <div class="row">
+          <div class="col-lg-12 iconlogo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+              <path
+                d="M21 7.66663H18.5C17.395 7.66663 16.3352 8.10561 15.5538 8.88701C14.7724 9.66842 14.3334 10.7282 14.3334 11.8333V14.3333H11.8334V17.6666H14.3334V24.3333H17.6667V17.6666H20.1667L21 14.3333H17.6667V11.8333C17.6667 11.6123 17.7545 11.4003 17.9108 11.244C18.0671 11.0878 18.279 11 18.5 11H21V7.66663Z"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+              <path
+                d="M20.1666 7.66663H11.8333C9.53211 7.66663 7.66663 9.53211 7.66663 11.8333V20.1666C7.66663 22.4678 9.53211 24.3333 11.8333 24.3333H20.1666C22.4678 24.3333 24.3333 22.4678 24.3333 20.1666V11.8333C24.3333 9.53211 22.4678 7.66663 20.1666 7.66663Z"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M19.3334 15.475C19.4362 16.1685 19.3178 16.8769 18.9948 17.4992C18.6719 18.1215 18.161 18.6262 17.5347 18.9414C16.9085 19.2566 16.1987 19.3663 15.5065 19.2549C14.8143 19.1436 14.1748 18.8167 13.6791 18.321C13.1833 17.8252 12.8565 17.1857 12.7451 16.4935C12.6337 15.8013 12.7434 15.0916 13.0586 14.4653C13.3739 13.8391 13.8785 13.3281 14.5009 13.0052C15.1232 12.6823 15.8315 12.5638 16.525 12.6667C17.2325 12.7716 17.8874 13.1012 18.3931 13.6069C18.8988 14.1126 19.2285 14.7676 19.3334 15.475Z"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M20.5834 11.4166H20.5917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+              <path
+                d="M25.1667 8.49996C24.3687 9.06285 23.4851 9.49338 22.55 9.77496C22.0482 9.19788 21.3812 8.78887 20.6392 8.60323C19.8973 8.41759 19.1163 8.46429 18.4018 8.737C17.6873 9.00972 17.0737 9.49529 16.6442 10.1281C16.2146 10.7608 15.9898 11.5102 16 12.275V13.1083C14.5356 13.1463 13.0844 12.8215 11.7759 12.1628C10.4673 11.5042 9.34197 10.5322 8.50004 9.33329C8.50004 9.33329 5.16671 16.8333 12.6667 20.1666C10.9505 21.3316 8.906 21.9157 6.83337 21.8333C14.3334 26 23.5 21.8333 23.5 12.25C23.4993 12.0178 23.477 11.7863 23.4334 11.5583C24.2839 10.7195 24.8841 9.66055 25.1667 8.49996V8.49996Z"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+              <path
+                d="M9.33329 9.33337H22.6666C23.5833 9.33337 24.3333 10.0834 24.3333 11V21C24.3333 21.9167 23.5833 22.6667 22.6666 22.6667H9.33329C8.41663 22.6667 7.66663 21.9167 7.66663 21V11C7.66663 10.0834 8.41663 9.33337 9.33329 9.33337Z"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M24.3333 11L16 16.8333L7.66663 11" stroke="white" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+              <path
+                d="M19.3333 15.1666V11.8333M23.5 7.66663H8.5V21H12.6667V24.3333L16 21H20.1667L23.5 17.6666V7.66663ZM15.1667 15.1666V11.8333V15.1666Z"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <p>Copyright Binar 2022</p>
+        <svg width="100" height="34" viewBox="0 0 100 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="34" fill="#0D28A6" />
+        </svg>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    $(document).on('click', '.navbar-collapse,.navbar-nav-toggler', function (e) {
+      if ($(e.target).is('.navbar-collapse') || $(e.target).is('.navbar-nav-toggler')) {
+        e.preventDefault();
+        $('.navbar-collapse').collapse('hide');
+      }
+    });
+    // Script Owl
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      dots: false,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        992: {
+          items: 3
+        }
+      }
+    })
+  </script>
+</body>
+
+
+</html>

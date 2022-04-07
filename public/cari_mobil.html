@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Binar Car Rental</title>
+    <link rel="stylesheet" href="assets/css/filter-box.css">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <link rel="stylesheet"
+        href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Helvetica;
+            overflow-x: hidden;
+        }
+
+        #owl-container {
+            margin-top: 100px;
+            width: 150%;
+            left: -25%;
+            position: relative;
+        }
+
+        .owl-carousel .owl-nav button.owl-next,
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel button.owl-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid #c4c4c4;
+            /* background-color: white; */
+
+        }
+
+        .owl-theme .owl-nav [class*=owl-]:hover {
+            background-color: #5CB85F;
+        }
+
+
+        .item {
+            background-color: #F1F3FF;
+
+        }
+
+        .owl-nav>.owl-prev>span:hover,
+        .owl-nav>.owl-next>span:hover {
+            background-color: #5CB85F;
+        }
+
+
+        .table-custom {
+            border-collapse: separate;
+            border-spacing: 15px;
+        }
+
+        .spacing {
+            margin-top: 80px;
+        }
+
+        .sewamobil {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 50px;
+            color: white;
+        }
+
+        .accordion-spacing {
+            margin-top: 20px;
+        }
+
+        .navbarstyling {
+            background-color: #F1F3FF;
+            box-shadow: 1px 1px 3px;
+        }
+
+        .whyus-card {
+            box-shadow: 1px 1px 7px;
+            margin: 10px;
+        }
+
+        .whyus-card:hover {
+            background-color: #F1F3FF;
+            transform: translateY(-15px);
+            transition: transform .75s;
+        }
+
+
+        .footer {
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            box-shadow: 1px -1px 3px;
+            padding: 10px;
+        }
+
+
+
+        @media screen and (min-width:992px) {
+
+            .item {
+                height: 100%;
+            }
+
+            .textjudul {
+                margin-top: 100px;
+            }
+
+            .bground {
+                padding-bottom: 190px;
+            }
+
+            .car {
+                position: absolute;
+                width: 704px;
+                margin-left: 100px;
+                margin-bottom: 300px;
+                overflow-y: hidden;
+            }
+
+
+        }
+
+        @media screen and (max-width:991px) {
+
+            .star {
+                text-align: center;
+            }
+
+            .item {
+                height: 100%;
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+
+            .textjudul {
+                font-size: 36px;
+            }
+
+            .navbar {
+                z-index: 1000;
+            }
+
+            .navbar-collapse {
+                position: fixed;
+                background: rgba(0, 0, 0, 0.6);
+                width: 100%;
+                height: 100%;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                overflow-x: hidden;
+            }
+
+            .navbar-nav {
+                background-color: white;
+                height: 100vh;
+                width: 50%;
+                left: 100%;
+                position: absolute;
+                transition: left .35s ease;
+            }
+
+            .navbar-collapse.collapsing {
+                transition: background-color .35s ease;
+            }
+
+            .navbar-collapse.show .navbar-nav {
+                transition: left .35s ease;
+                left: 50%;
+            }
+
+            .nav-item {
+                margin-left: 10px;
+            }
+
+            .car {
+                position: absolute;
+                width: 500px;
+                overflow-y: hidden;
+
+            }
+
+            #section1 {
+                margin-bottom: 375px;
+            }
+
+            .footer {
+                text-align: left;
+            }
+
+            .iconlogo {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+    <!-- Navbar -->
+    <div class="bground" style="background-color: #F1F3FF;overflow: hidden;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light navbarstyling">
+                <div class="container-lg">
+                    <a class="navbar-link" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-content="Top popover" href="#"><svg width="100" height="34" viewBox="0 0 100 34"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="34" fill="#0D28A6" />
+                        </svg>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarText" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-lg-0">
+                            <li class="d-lg-none">
+                                <a class="navbar-nav-toggler" href="#">X</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active me-2" href="#section1">Our Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active me-2" href="#section2">Why Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active me-2" href="#section3">Testimonial</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active me-2" href="#section4">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-link btn btn-success link-light" href="#">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- Mobil -->
+        <div class="container">
+            <div id="section1" class="row">
+                <div class="col-lg-6" style="margin-top: 10px;">
+                    <h1 class="textjudul"><b>Sewa & Rental Mobil terbaik di kawasan (Lokasimu)</b></h1>
+                    <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan
+                        harga terjangkau. Selalu
+                        siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+                    <a href="./cari_mobil.html" type="button" class="btn btn-success" style="visibility: hidden;">Mulai
+                        Sewa Mobil</a>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center">
+                    <img src="./images/pict/mobil.svg" class="img-fluid car" style="margin-top:80px;" alt="mobil">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Data -->
+    <div class="row ">
+        <div class="col-lg-12" style="position: absolute;
+        top: 530px;">
+            <div class="container d-flex justify-content-center">
+                <div id="filter-box"></div>
+            </div>
+            <div class="modal-backdrop background-filter"></div>
+            <script src="assets/js/filter-box-container.js"></script>
+            <script src="assets/js/filter-box.js"></script>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="container">
+        <div class="footer row" style="margin-top: 200px;margin-bottom: 20px;">
+            <div class="col-lg-3">
+                <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+                <p>binarcarrental@gmail.com</p>
+                <p>081-233-334-808</p>
+            </div>
+
+            <div class="col-lg-2">
+                <p>Our Services</p>
+                <p>Why Us</p>
+                <p>Testimonial</p>
+                <p>FAQ</p>
+            </div>
+
+            <div class="col-lg-4">
+                <p>Connect with us</p>
+                <div class="row">
+                    <div class="col-lg-12 iconlogo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+                            <path
+                                d="M21 7.66663H18.5C17.395 7.66663 16.3352 8.10561 15.5538 8.88701C14.7724 9.66842 14.3334 10.7282 14.3334 11.8333V14.3333H11.8334V17.6666H14.3334V24.3333H17.6667V17.6666H20.1667L21 14.3333H17.6667V11.8333C17.6667 11.6123 17.7545 11.4003 17.9108 11.244C18.0671 11.0878 18.279 11 18.5 11H21V7.66663Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+                            <path
+                                d="M20.1666 7.66663H11.8333C9.53211 7.66663 7.66663 9.53211 7.66663 11.8333V20.1666C7.66663 22.4678 9.53211 24.3333 11.8333 24.3333H20.1666C22.4678 24.3333 24.3333 22.4678 24.3333 20.1666V11.8333C24.3333 9.53211 22.4678 7.66663 20.1666 7.66663Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M19.3334 15.475C19.4362 16.1685 19.3178 16.8769 18.9948 17.4992C18.6719 18.1215 18.161 18.6262 17.5347 18.9414C16.9085 19.2566 16.1987 19.3663 15.5065 19.2549C14.8143 19.1436 14.1748 18.8167 13.6791 18.321C13.1833 17.8252 12.8565 17.1857 12.7451 16.4935C12.6337 15.8013 12.7434 15.0916 13.0586 14.4653C13.3739 13.8391 13.8785 13.3281 14.5009 13.0052C15.1232 12.6823 15.8315 12.5638 16.525 12.6667C17.2325 12.7716 17.8874 13.1012 18.3931 13.6069C18.8988 14.1126 19.2285 14.7676 19.3334 15.475Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20.5834 11.4166H20.5917" stroke="white" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+                            <path
+                                d="M25.1667 8.49996C24.3687 9.06285 23.4851 9.49338 22.55 9.77496C22.0482 9.19788 21.3812 8.78887 20.6392 8.60323C19.8973 8.41759 19.1163 8.46429 18.4018 8.737C17.6873 9.00972 17.0737 9.49529 16.6442 10.1281C16.2146 10.7608 15.9898 11.5102 16 12.275V13.1083C14.5356 13.1463 13.0844 12.8215 11.7759 12.1628C10.4673 11.5042 9.34197 10.5322 8.50004 9.33329C8.50004 9.33329 5.16671 16.8333 12.6667 20.1666C10.9505 21.3316 8.906 21.9157 6.83337 21.8333C14.3334 26 23.5 21.8333 23.5 12.25C23.4993 12.0178 23.477 11.7863 23.4334 11.5583C24.2839 10.7195 24.8841 9.66055 25.1667 8.49996V8.49996Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+                            <path
+                                d="M9.33329 9.33337H22.6666C23.5833 9.33337 24.3333 10.0834 24.3333 11V21C24.3333 21.9167 23.5833 22.6667 22.6666 22.6667H9.33329C8.41663 22.6667 7.66663 21.9167 7.66663 21V11C7.66663 10.0834 8.41663 9.33337 9.33329 9.33337Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M24.3333 11L16 16.8333L7.66663 11" stroke="white" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="16" cy="16" r="16" fill="#0D28A6" />
+                            <path
+                                d="M19.3333 15.1666V11.8333M23.5 7.66663H8.5V21H12.6667V24.3333L16 21H20.1667L23.5 17.6666V7.66663ZM15.1667 15.1666V11.8333V15.1666Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <p>Copyright Binar 2022</p>
+                <svg width="100" height="34" viewBox="0 0 100 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="34" fill="#0D28A6" />
+                </svg>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/car.example.js"></script>
+    <script src="scripts/binar.js"></script>
+</body>
+
+</html>
